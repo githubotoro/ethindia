@@ -17,7 +17,7 @@ const Mint = () => {
 	const { chain } = useNetwork();
 	const { data: signer, isError, isLoading } = useSigner();
 
-	const CONTRACT_ADDRESS = "0xE1DBC6647e1e3e2c4a8E3092131724EE8579f1B2";
+	const CONTRACT_ADDRESS = "0xEA5d5a9B7dd430BF36FC088fCA83a12a8C5DbBc3";
 	const CONTRACT_ABI = AdnftContract.abi;
 
 	const mintNFT = async (_ipfsLink) => {
