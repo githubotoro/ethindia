@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import { db } from "../../utils/firebase/firebase-config";
 
 import { useQuery } from "react-query";
 import { useRouter } from "next/router";
@@ -9,31 +11,34 @@ import Ads from "../../components/viewport/Ads";
 import AdLogo from "../../components/viewport/AdLogo";
 
 export default function Viewport() {
-  const router = useRouter();
-  const { tokenId } = router.query;
-  const { isLoading, isError, data, error } = useQuery(
-    "nft",
-    async () => {
-      const res = await fetchNFTData(tokenId);
-      return res;
-    },
-    {
-      enabled: !!tokenId,
-      staleTime: Infinity,
-    }
-  );
+	const router = useRouter();
+	const { tokenId } = router.query;
+	const { isLoading, isError, data, error } = useQuery(
+		"nft",
+		async () => {
+			const res = await fetchNFTData(tokenId);
 
-  if (!tokenId || isLoading) {
-    return <Loading />;
-  }
+			return res;
+		},
+		{
+			enabled: !!tokenId,
+			staleTime: Infinity,
+		}
+	);
 
-  return (
-    <div className="viewport">
-      <img className="relative w-full" src={data.ipfsUrl} alt="nft" />
-      <div className="absolute flex flex-col justify-between top-0 bottom-0 right-0 left-0">
-        <AdLogo data={data} />
-        <Ads data={data} />
-      </div>
-    </div>
-  );
+	if (!tokenId || isLoading) {
+		return <Loading />;
+	}
+
+	return (
+		<div className="viewport">
+			<img className="relative w-full" src={data.ipfsUrl} alt="nft" />
+			<div className="absolute flex flex-col justify-between top-0 bottom-0 right-0 left-0">
+				<AdLogo data={data} />
+				<Ads data={data} />
+			</div>
+
+			<div>Views = {data.views}</div>
+		</div>
+	);
 }
