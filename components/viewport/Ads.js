@@ -31,14 +31,16 @@ export default function Ads({ data }) {
 						onClick={() => setShowAd(false)}
 					/>
 				</button>
-				<a
-					href={data.linkUrl}
-					target="_blank"
-					rel="noreferrer"
-					className="btn btn-sm btn-primary px-4 h-10 capitalize font-medium rounded-sm mr-4"
-				>
-					Explore Now
-				</a>
+				<div className="tooltip" data-tip="Ctrl + Click">
+					<a
+						href={data.linkUrl}
+						target="_blank"
+						rel="noreferrer"
+						className="btn btn-sm btn-primary px-4 h-10 capitalize font-medium rounded-sm mr-4"
+					>
+						Explore Now
+					</a>
+				</div>
 			</div>
 		</div>
 	) : null;

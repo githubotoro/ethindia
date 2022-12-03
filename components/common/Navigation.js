@@ -9,27 +9,29 @@ export default function Navigation() {
 	const pageName = (pathname) => {
 		let path = pathname.split("/");
 		if (pathname === "/") {
-			return "Home Page";
+			return "Home";
 		} else if (path.includes("explore")) {
-			return "Explore Page";
+			return "Explore";
 		} else if (path.includes("about")) {
-			return "About Page";
+			return "About";
 		} else if (path.includes("dashboard")) {
-			return "Dashboard Page";
+			return "Dashboard";
 		} else {
 			return false;
 		}
 	};
 
 	return (
-		<div>
+		<div className="bg-base-200">
 			{pageName(pathname) ? (
-				<div className="container my-5 flex justify-between">
-					<div className="text-xl font-medium">
-						{pageName(pathname)}
+				<div className="container my-5 flex justify-between bg-base-200">
+					<div className="text-xl font-medium bg-base-200">
+						<div className="font-extrabold">
+							{pageName(pathname)}
+						</div>
 					</div>
 
-					<ConnectButton className />
+					<ConnectButton className="btn btn-primary rounded-sm btn-sm h-fit w-fit px-2 py-0 sm:px-3 sm:py-1 items-center capitalize font-black text-md sm:text-lg border-4 border-accent shadow-sm shadow-accent-focus" />
 				</div>
 			) : null}
 		</div>
