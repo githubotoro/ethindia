@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import AdnftContract from "../components/helper/ADNFT.json";
 import { useContractRead, useAccount, useNetwork, useSigner } from "wagmi";
@@ -22,23 +22,27 @@ export default function Explore() {
 		chainId: 80001,
 	});
 
-	const getTotalNfts = async () => {
-		let ALCHEMY_PROVIDER = new ethers.providers.JsonRpcProvider(
-			process.env.NEXT_PUBLIC_POLYGON_MUMBAI_API_KEY
-		);
+	useEffect(() => {
+		const getTotalNfts = async () => {
+			let ALCHEMY_PROVIDER = new ethers.providers.JsonRpcProvider(
+				process.env.NEXT_PUBLIC_POLYGON_MUMBAI_API_KEY
+			);
 
-		let AdnftContract = new ethers.Contract(
-			CONTRACT_ADDRESS,
-			CONTRACT_ABI,
-			ALCHEMY_PROVIDER
-		);
+			let AdnftContract = new ethers.Contract(
+				CONTRACT_ADDRESS,
+				CONTRACT_ABI,
+				ALCHEMY_PROVIDER
+			);
 
-		let getTokenIdsPromise = AdnftContract.tokenIds();
+			let getTokenIdsPromise = AdnftContract.tokenIds();
 
-		await getTokenIdsPromise.then(function (result) {
-			setTotalNfts(parseInt(result._hex));
-		});
-	};
+			await getTokenIdsPromise.then(function (result) {
+				setTotalNfts(parseInt(result._hex));
+			});
+		};
+
+		getTotalNfts();
+	}, []);
 
 	const getAllNfts = () => {
 		let tokenList = [];
@@ -48,31 +52,25 @@ export default function Explore() {
 
 		return (
 			<>
-				{tokenList.map((token) => {
-					return (
-						<>
-							<iframe
-								className="w-100 h-100"
-								src="https://ethindia-one.vercel.app/view/1"
-							></iframe>
-						</>
-					);
-				})}
+				<div className="w-full">
+					<div className="grid grid-flow-row-dense grid-cols-4 overflow-hidden">
+						{tokenList.map((token) => {
+							return (
+								<>
+									<iframe
+										height="90%"
+										scrolling="no"
+										className="w-full h-[450px] overflow-hidden"
+										src={`https://ethindia-one.vercel.app/view/${token}`}
+									></iframe>
+								</>
+							);
+						})}
+					</div>
+				</div>
 			</>
 		);
 	};
 
-	return (
-		<>
-			<button
-				onClick={() => {
-					getTotalNfts();
-				}}
-			>
-				Get Total NFTs
-			</button>
-
-			{getAllNfts()}
-		</>
-	);
+	return <>{getAllNfts()}</>;
 }
