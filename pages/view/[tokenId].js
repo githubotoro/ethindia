@@ -27,10 +27,6 @@ export default function Viewport() {
     return <Loading />;
   }
 
-  if (isError) {
-    return <span>Error: {error.message}</span>;
-  }
-
   return (
     <div className="viewport">
       <img className="relative w-full" src={data.ipfsUrl} alt="nft" />
