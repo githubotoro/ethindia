@@ -9,7 +9,7 @@ export default function Explore() {
 	const { chain } = useNetwork();
 	const { data: signer } = useSigner();
 
-	const CONTRACT_ADDRESS = "0xE1DBC6647e1e3e2c4a8E3092131724EE8579f1B2";
+	const CONTRACT_ADDRESS = "0x3EA4c5761BC32FcEA3D7f714a0F861581764ae9a";
 	const CONTRACT_ABI = AdnftContract.abi;
 
 	const [totalNfts, setTotalNfts] = useState();
@@ -52,15 +52,15 @@ export default function Explore() {
 
 		return (
 			<>
-				<div className="w-full">
-					<div className="grid grid-flow-row-dense grid-cols-4 overflow-hidden">
+				<div className="w-full bg-base-200">
+					<div className="grid grid-flow-row-dense grid-cols-3 overflow-hidden">
 						{tokenList.map((token) => {
 							return (
 								<>
 									<iframe
 										height="90%"
 										scrolling="no"
-										className="w-full h-[450px] overflow-hidden"
+										className="m-2 p-6 w-full h-[450px] overflow-hidden rounded-[30px] drop-shadow-md"
 										src={`https://ethindia-one.vercel.app/view/${token}`}
 									></iframe>
 								</>
