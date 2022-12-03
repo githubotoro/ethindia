@@ -35,7 +35,7 @@ const Mint = () => {
 		<>
 			<div className="w-full h-screen bg-base-200 p-4">
 				<center>
-					<div className="max-w-lg space-y-4">
+					<div className="max-w-lg space-y-4 ">
 						<input
 							className="input input-bordered font-medium text-md w-full focus:border-4 focus:border-neutral"
 							placeholder="Title"

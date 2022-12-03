@@ -30,10 +30,10 @@ export default function Viewport() {
 		<>
 			<center>
 				<div className="max-w-2xl">
-					<img src={data.ipfsUrl} />
+					<img className="z-10" src={data.ipfsUrl} />
 
 					<div className="p-4 -mt-28">
-						<div className="p-2 w-full h-20 rounded-md drop-shadow-md border-2 bg-white border-white">
+						<div className="p-2 w-full h-20 rounded-md drop-shadow-md border-2 bg-base-100 border-base-100">
 							<img
 								className="float-left max-h-full rounded-md"
 								src={data.logoURL}
@@ -49,43 +49,15 @@ export default function Viewport() {
 								</div>
 							</div>
 
-							{/* <div className="float-left max-h-full ml-2">
-								<div className="flex flex-col">
-									<p>{data.title}</p>
-									<p>{data.headline}</p>
-								</div>
-							</div> */}
-
-							{/* <div className="ml-2 items-start align-middle">
-								<div className="font-bold text-md">
-									{data.title}
-								</div>
-
-								<div className="font-medium text-md">
-									{data.headline}
-								</div>
-							</div> */}
-
 							<div className="p-2">
-								<div className="float-right btn btn-sm btn-primary h-fit w-fit px-5 py-3 capitalize font-bold text-md shadow-md rounded-md">
+								<a
+									href={data.linkUrl}
+									target="_blank"
+									className="float-right btn btn-sm btn-primary h-fit w-fit px-5 py-3 capitalize font-bold text-md shadow-md rounded-md"
+								>
 									Explore!
-								</div>
+								</a>
 							</div>
-
-							{/* <div className="ml-2 flex flex-col items-start align-middle">
-								<div className="font-bold text-md">
-									{data.title}
-								</div>
-
-								<div className="font-medium text-md">
-									{data.headline}
-								</div>
-							</div>
-
-							<img
-								className="float-right bg-black rounded-md align-middle"
-								src={data.logoURL}
-							/> */}
 						</div>
 					</div>
 				</div>
