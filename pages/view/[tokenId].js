@@ -37,8 +37,6 @@ export default function Viewport() {
 				<AdLogo data={data} />
 				<Ads data={data} />
 			</div>
-
-			<div>Views = {data.views}</div>
 		</div>
 	);
 }
