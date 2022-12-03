@@ -4,7 +4,7 @@ import { useAccount, useSigner, useNetwork } from "wagmi";
 
 import AdnftContract from "../../components/helper/ADNFT.json";
 
-const mint = () => {
+const Mint = () => {
 	const [headline, setHeadline] = useState();
 	const [title, setTitle] = useState();
 	const [logoUrl, setLogoUrl] = useState();
@@ -17,7 +17,7 @@ const mint = () => {
 	const { chain } = useNetwork();
 	const { data: signer, isError, isLoading } = useSigner();
 
-	const CONTRACT_ADDRESS = "0x3286B0dA98e6477a768faf37448B5Fbd2DBC391f";
+	const CONTRACT_ADDRESS = "0xE1DBC6647e1e3e2c4a8E3092131724EE8579f1B2";
 	const CONTRACT_ABI = AdnftContract.abi;
 
 	const mintNFT = async (_ipfsLink) => {
@@ -87,4 +87,4 @@ const mint = () => {
 	);
 };
 
-export default mint;
+export default Mint;
