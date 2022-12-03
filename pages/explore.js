@@ -61,7 +61,7 @@ export default function Explore() {
 										height="90%"
 										scrolling="no"
 										className="m-2 p-6 w-full h-[450px] overflow-hidden rounded-[30px] drop-shadow-md"
-										src={`https://ethindia-one.vercel.app/view/${token}`}
+										src={`https://ownad.vercel.app/view/${token}`}
 									></iframe>
 								</>
 							);
