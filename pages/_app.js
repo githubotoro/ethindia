@@ -1,5 +1,5 @@
 import "../styles/tailwnd.scss";
-// import { Poppins } from "@next/font/google";
+import { Poppins } from "@next/font/google";
 
 import Layout from "../components/default/layout";
 
@@ -14,11 +14,11 @@ import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 
-// const poppins = Poppins({
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-//   style: ["normal"],
-//   subsets: ["latin"],
-// });
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal"],
+  subsets: ["latin"],
+});
 
 const { chains, provider } = configureChains(
   [chain.polygonMumbai],
@@ -48,11 +48,11 @@ function MyApp({ Component, pageProps }) {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={chains}>
         <QueryClientProvider client={queryClient}>
-          <div>
+          <div className={poppins.className}>
             <Layout>
               <main>
                 <Component {...pageProps} />
-                <ReactQueryDevtools initialIsOpen={false} />
+                {/* <ReactQueryDevtools initialIsOpen={false} /> */}
               </main>
             </Layout>
           </div>
