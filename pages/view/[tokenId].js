@@ -24,17 +24,17 @@ export default function Viewport() {
     }
   );
 
-  if (!tokenId || isLoading) {
-    return <Loading />;
-  }
-
-  return (
+  return tokenId && !isLoading ? (
     <div className="viewport">
-      <img className="relative w-full" src={data.nftImage} alt="nft" />
+      <img
+        className="relative w-full"
+        src={tokenId && !isLoading ? data.nftImage : null}
+        alt="nft"
+      />
       <div className="absolute flex flex-col justify-between top-0 bottom-0 right-0 left-0">
-        <AdLogo data={data} />
-        <Ads data={data} />
+        <AdLogo data={tokenId || !isLoading ? data : null} />
+        <Ads data={tokenId || !isLoading ? data : null} />
       </div>
     </div>
-  );
+  ) : null;
 }

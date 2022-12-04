@@ -37,7 +37,7 @@ export default function Mint() {
     console.log("--->", "start");
     const cid = await storeFiles(nftFiles);
 
-    const nftImage = "https://i.seadn.io/gae/" + cid;
+    const nftImage = "https://ipfs.io/ipfs/" + cid + "/" + nftFiles[0].name;
     const id = await mintNft(nftName, nftDescription, nftImage, address);
 
     const data = {

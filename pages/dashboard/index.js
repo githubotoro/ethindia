@@ -1,49 +1,10 @@
 import { useAccount } from "wagmi";
-import { useQuery } from "react-query";
-import axios from "axios";
-
-import Loading from "../../components/common/Loading";
 
 import Footer from "../../components/home/Footer";
 import Link from "next/link";
 
 export default function Dashboard() {
   const { address, isConnected } = useAccount();
-
-  const { isLoading, isError, data, error } = useQuery(
-    "lens",
-    async () => {
-      const endpoint = "https://api.lens.dev/playground";
-      const headers = {
-        "content-type": "application/json",
-      };
-      const graphqlQuery = {
-        operationName: "Profiles",
-        query: `query Profiles { profiles ( request: { ownedBy: "${address}" limit: 10 } ) { items { name handle } } }`,
-        variables: {},
-      };
-      const response = await axios({
-        url: endpoint,
-        method: "post",
-        headers: headers,
-        data: graphqlQuery,
-      });
-      const profiles = response.data.data.profiles.items;
-      console.log(profiles);
-      if (profiles.length > 0) {
-        return profiles;
-      }
-      return null;
-    },
-    {
-      enabled: !!address,
-      staleTime: Infinity,
-    }
-  );
-
-  if (!address || isLoading) {
-    return <Loading />;
-  }
 
   return (
     <div className="container h-screen">
@@ -56,14 +17,13 @@ export default function Dashboard() {
         </div>
         <div className="flex justify-between flex-1">
           <div>
-            <div>{data}</div>
-            <div class="mt-1 inline-block">
-              <label for="address" class="text-sm font-semibold text-gray-500">
+            <div className="mt-1 inline-block">
+              <label className="text-sm font-semibold text-gray-500">
                 Address
               </label>
-              <div class="flex font-medium items-center border-2 border-gray-400 rounded-full text-base mt-2 p-1">
-                <div class="text-gray-900 px-4 py-2 tracking-wider">
-                  {address || "0x0000000000000000000000000000000000000000"}
+              <div className="flex font-medium items-center border-2 border-gray-400 rounded-full text-base mt-2 p-1">
+                <div className="text-gray-900 px-4 py-2 tracking-wider">
+                  Hello There!
                 </div>
                 <div className="h-10 w-10 bg-success flex items-center justify-center rounded-full">
                   <img alt="arrow" src="/images/copy.svg" className="h-5 w-5" />
@@ -84,9 +44,7 @@ export default function Dashboard() {
             NFTs
           </span>
         </div>
-        <div></div>
       </div>
-
       <Footer />
     </div>
   );
