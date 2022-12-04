@@ -30,13 +30,15 @@
 
 > **GitHub Source Code: [Web3 App](https://github.com/githubotoro/ownad-web3-app)**
 
-> **Smart Contract PolygonScan Link: [link](link)**
+> **Smart Contract Address: 0x97983903d9c2D624C5d3D581d894277740f3d602**
+
+> **Smart Contract PolygonScan Link: [https://mumbai.polygonscan.com/address/0x97983903d9c2D624C5d3D581d894277740f3d602](https://mumbai.polygonscan.com/address/0x97983903d9c2D624C5d3D581d894277740f3d602)**
 
 <!-- PROJECT LINKS -->
 
 ## **Project Demo 🌈**
 
-[![Watch the video](URL_VIDEO)](URL_VIDEO)
+[![Watch the video](https://www.loom.com/share/a7efdf8498a048ea93a1e9d32c697343)](https://www.loom.com/share/a7efdf8498a048ea93a1e9d32c697343)
 
 <!-- PROJECT HEADER -->
 

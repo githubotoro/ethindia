@@ -1,5 +1,4 @@
 import detectEthereumProvider from "@metamask/detect-provider";
-import { parse } from "postcss";
 import Web3 from "web3";
 
 import { Web3Storage } from "web3.storage";
