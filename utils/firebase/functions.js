@@ -18,12 +18,16 @@ export const storeNft = async (file, data) => {
 
   const docRef = doc(db, "tokens", "" + data.id);
   const result = await setDoc(docRef, {
+    id: data.id,
     nftName: data.nftName,
     nftDescription: data.nftDescription,
     nftImage: data.nftImage,
     adTitle: data.adTitle,
     adHeadline: data.adHeadline,
     adImage: adImage,
+    adLink: data.adLink,
   });
   return result;
 };
+
+export const findUserNFT = () => {};

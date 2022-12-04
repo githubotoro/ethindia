@@ -10,13 +10,17 @@ export default function Ads({ data }) {
         <div className="h-16 w-16 rounded shadow overflow-hidden mr-2">
           <img
             className="h-full object-cover"
-            src={data.logoUrl}
+            src={data.adImage}
             alt="ad logo"
           />
         </div>
         <div className="">
-          <div className="font-semibold text-base text-left">{data.title}</div>
-          <div className="text-sm text-gray-500 text-left">{data.headline}</div>
+          <div className="font-semibold text-base text-left">
+            {data.adTitle}
+          </div>
+          <div className="text-sm text-gray-500 text-left">
+            {data.adHeadline}
+          </div>
         </div>
       </div>
       <div className="flex flex-col items-end">
@@ -29,7 +33,7 @@ export default function Ads({ data }) {
           />
         </button>
         <a
-          href={data.linkUrl}
+          href={data.adLink}
           target="_blank"
           rel="noreferrer"
           className="btn btn-sm btn-primary px-4 h-10 capitalize font-medium rounded-sm mr-4"

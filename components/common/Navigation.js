@@ -1,39 +1,54 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function Navigation() {
-	const { pathname } = useRouter();
+  const { pathname } = useRouter();
 
-	const pageName = (pathname) => {
-		let path = pathname.split("/");
-		if (pathname === "/") {
-			return "Home";
-		} else if (path.includes("explore")) {
-			return "Explore";
-		} else if (path.includes("about")) {
-			return "About";
-		} else if (path.includes("dashboard")) {
-			return "Dashboard";
-		} else {
-			return false;
-		}
-	};
+  return (
+    <div>
+      <div className="container py-5 flex justify-between items-center">
+        <div className="flex items-center">
+          <div className="font-bold text-2xl mr-20">OwnAd</div>
+          <ul className="font-medium text-gray-500 flex space-x-10">
+            <Link href="/">
+              <li
+                className={
+                  pathname === "/" ? "text-gray-900 font-semibold" : ""
+                }
+              >
+                Home
+              </li>
+            </Link>
+            <Link href="/explore">
+              <li
+                className={
+                  pathname === "/explore" ? "text-gray-900 font-semibold" : ""
+                }
+              >
+                Explore
+              </li>
+            </Link>
+            <Link href="/dashboard">
+              <li
+                className={
+                  pathname === "/dashboard" ||
+                  pathname === "/dashboard/mint" ||
+                  pathname === "/update"
+                    ? "text-gray-900 font-semibold"
+                    : ""
+                }
+              >
+                Dashboard
+              </li>
+            </Link>
+          </ul>
+        </div>
 
-	return (
-		<div className="bg-base-200">
-			{pageName(pathname) ? (
-				<div className="container my-5 flex justify-between bg-base-200">
-					<div className="text-xl font-medium bg-base-200">
-						<div className="font-extrabold">
-							{pageName(pathname)}
-						</div>
-					</div>
-
-					<ConnectButton className="btn btn-primary rounded-sm btn-sm h-fit w-fit px-2 py-0 sm:px-3 sm:py-1 items-center capitalize font-black text-md sm:text-lg border-4 border-accent shadow-sm shadow-accent-focus" />
-				</div>
-			) : null}
-		</div>
-	);
+        <ConnectButton className="rounded py-3 font-thin" />
+      </div>
+    </div>
+  );
 }
