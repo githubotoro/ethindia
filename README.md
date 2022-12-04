@@ -1,34 +1,95 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<!-- PROJECT HEADER -->
 
-## Getting Started
+<div align="center">
+  <a href="https://ownad.vercel.app/">
+    <h1>Ownad | Turn your NFTs to Ad-Spaces</h1>
+  </a>
+  
+  <p align="center">
+    <a href="https://ownad.vercel.app/">View Project</a>
+    |
+    <a href="https://github.com/githubotoro/ownad-web3-app/issues">Report Bug</a>
+    |
+    <a href="https://github.com/githubotoro/ownad-web3-app/issues">Request Feature</a>
+    <br/>
+    <b>If you like this project, don't forget to give it a star! <br/> Thanks! 😊</b>
+  </p>
+</div>
 
-First, run the development server:
+## **Ownad In A Tweet ✒️**
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+> Turn your NFTs into **Ad-Spaces**💯
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👉 **[Ownad](https://ownad.vercel.app/)** helps you in adding ads to NFTs.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<!-- PROJECT LINKS -->
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## **Project Links 🔗**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+> **[Website](https://ownad.vercel.app/) (ownad.vercel.app)**
 
-## Learn More
+> **GitHub Source Code: [Web3 App](https://github.com/githubotoro/ownad-web3-app)**
 
-To learn more about Next.js, take a look at the following resources:
+> **Smart Contract PolygonScan Link: [link](link)**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<!-- PROJECT LINKS -->
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## **Project Demo 🌈**
 
-## Deploy on Vercel
+[![Watch the video](URL_VIDEO)](URL_VIDEO)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<!-- PROJECT HEADER -->
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<!-- ABOUT THE PROJECT -->
+
+## **Inspiration 📌**
+
+The problems associated with the currently available NFT ecosystem along with our proposed solution can be summarized as:
+
+### Reachability
+
+-   Definition: The ability of the creator to reach the followers.
+-   Problem: How does the creator make sure that the followers are within the reach of his/her collectibles and they are indeed being liked by the community?
+-   Solution: We make sure that all the relevant information is made directly available in the NFT display itself. This allows followers to reach the creator directly, rather than depending on a third-party source.
+
+### Engagement
+
+-   Definition: The interaction carried out between creators and followers.
+-   Problem: How does the creator confirm that the community is actually lively and his/her collectibles in fact, have an impact on society?
+-   Solution: We confirm that the followers are able to interact with the NFT and therefore, they are not static anymore.
+
+### Growth
+
+-   Definition: The process of increasing in amount, value, or importance.
+-   Problem: How does the creator ensure that he/she does really have the potential of growing and the supporting community is indeed sustainable?
+-   Solution: We make sure that the existing NFT owners are able to earn revenue from their NFTs even without listing them for sale.
+
+<!-- ABOUT THE PROJECT -->
+
+<!-- GETTING STARTED -->
+
+## **Getting Started 🚀**
+
+> All you need to get started with this project is **Adness** 👀
+
+### **Installation 💻**
+
+1.  **Clone** this repo.
+
+    ```sh
+    git clone https://github.com/githubotoro/ownad-web3-app.git
+    ```
+
+2.  **Install** NPM packages.
+    ```sh
+    npm install
+    ```
+3.  **Start** the project.
+
+    ```sh
+    npm start
+    ```
+
+4.  **Time to add Ads to those NFTs! ✅**
+
+<!-- GETTING STARTED -->
